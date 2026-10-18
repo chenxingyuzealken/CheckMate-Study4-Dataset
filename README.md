@@ -1,10 +1,14 @@
 # CheckMate evidence enriched dataset
 
+**Study 4 dataset repository:** https://github.com/chenxingyuzealken/CheckMate-Study4-Dataset
+
+**Original CheckMate project repository:** https://github.com/bettersg/checkMate
+
 Research data supplement for Study 4 on early information-disorder detection using CheckMate claims, target-directed emotion and stance analysis (TESA), related Reddit discussions, and retrieved webpages.
 
 ## Dataset
 
-[Download the Excel workbook](data/Study4_CheckMate_reconstruction_RELEASE_CANDIDATE.xlsx)
+[Download the Excel workbook](Study4_reconstruction_dataset_TARGETS_VISIBLE_REVIEW.xlsx)
 
 | Worksheet | Records | Description |
 | --- | ---: | --- |
