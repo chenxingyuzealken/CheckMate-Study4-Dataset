@@ -1,4 +1,4 @@
-# CheckMate Study 4 — reconstruction dataset
+# CheckMate evidence enriched dataset
 
 Research data supplement for Study 4 on early information-disorder detection using CheckMate claims, target-directed emotion and stance analysis (TESA), related Reddit discussions, and retrieved webpages.
 
@@ -20,17 +20,16 @@ Research data supplement for Study 4 on early information-disorder detection usi
 
 **TESA targets:** 21,083 extracted target labels are visible. A further 203 unusually long, URL-like, or potentially sensitive/source-text-like targets are withheld and flagged as `WITHHELD_REVIEW`. The raw withheld values are not distributed.
 
+Temporal cutoffs are **0m, 1m, 15m, 20m, 60m, 90m, 24h, 48h, Full**. The `first_available_stage` indicator is estimated from source metadata; `Full` includes material with missing or late dates and does not mean it existed at claim submission.
+
+
 ## What is *not* included
 
 The workbook **does not distribute the original CheckMate claim text**, exact CheckMate submission timestamps, Reddit body or author text, full webpage text, original unapproved search queries, the restricted modelling JSONL or private review/crosswalk material. Some links have their query strings removed to limit accidental publication of tokens or private data.
 
 Source IDs and URLs can sometimes permit external re-collection **where resources remain publicly accessible and platform terms permit**. These are identifiers and pointers, not permission to republish third-party content. Retrieved webpages are not expert-verified fact-checks; the Reddit records describe related online discussion rather than direct WhatsApp forwarding traces.
 
-## Reproducibility
 
-The notebook `scripts/Study4_build_public_dataset_Colab.ipynb` and Python exporter `scripts/Study4_build_public_dataset_colab.py` recreate the workbook from the **restricted Step 16 source JSONL** for authorised researchers. The source data are not included here. Some private review outputs must never be checked into this repository.
-
-Temporal cutoffs are **0m, 1m, 15m, 20m, 60m, 90m, 24h, 48h, Full**. The `first_available_stage` indicator is estimated from source metadata; `Full` includes material with missing or late dates and does not mean it existed at claim submission.
 
 ## Important limitations and reuse notice
 
