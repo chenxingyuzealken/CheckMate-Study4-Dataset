@@ -1,0 +1,8 @@
+PRIVATE_DO_NOT_PUBLISH/
+**/PRIVATE_*
+*.jsonl
+*.parquet
+*.pkl
+.env
+.ipynb_checkpoints/
+__pycache__/
