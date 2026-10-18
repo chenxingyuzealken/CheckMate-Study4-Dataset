@@ -1,7 +1,9 @@
 {
   "dataset": "Study 4 CheckMate reconstruction dataset",
   "date": "2026-10-18",
-  "status": "DATASET_WORKBOOK_UPLOAD_PENDING",
+  "status": "PUBLISHED",
+  "dataset_filename": "Study4_reconstruction_dataset_TARGETS_VISIBLE_REVIEW.xlsx",
+  "dataset_sha256": "1adbb450c6f4cd93ac6be1045d16601a55047fcd9662523fa4475ca0637fe824",
   "join_key": "checkmate_message_id",
   "original_claim_text_included": false,
   "original_message_id_included": true,
@@ -14,11 +16,8 @@
     "Reddit_Comments": 17416,
     "Web_Evidence": 3568
   },
-  "dataset_filename": "data/Study4_CheckMate_reconstruction_RELEASE_CANDIDATE.xlsx",
-  "dataset_sha256": "15321d5e47cb3aa6100ee78d4925e0b9884833de098bae801de8c13c6bebb5cf",
   "notes": [
-    "Excel workbook prepared on Drive but GitHub upload pending",
-    "No original claim text or restricted source files",
-    "No explicit licence assigned"
+    "Workbook available in the repository root.",
+    "No explicit reuse license assigned."
   ]
 }
