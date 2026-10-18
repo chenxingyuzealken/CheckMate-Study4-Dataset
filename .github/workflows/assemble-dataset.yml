@@ -1,0 +1,37 @@
+name: Assemble approved Study 4 dataset
+on:
+  push:
+    paths:
+      - 'release_chunks/**'
+      - '.github/workflows/assemble-dataset.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate archive and restore Excel
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p data
+          cat release_chunks/archive.part* > /tmp/study4-archive.b64
+          base64 --decode /tmp/study4-archive.b64 > /tmp/study4-archive.zip
+          echo 'ab8d3639a35064aef74dc841e558756f17ed51538b87d2370ac97f3032d22e91  /tmp/study4-archive.zip' | sha256sum --check
+          unzip -p /tmp/study4-archive.zip data/Study4_CheckMate_reconstruction_RELEASE_CANDIDATE.xlsx > data/Study4_CheckMate_reconstruction_RELEASE_CANDIDATE.xlsx
+          echo '15321d5e47cb3aa6100ee78d4925e0b9884833de098bae801de8c13c6bebb5cf  data/Study4_CheckMate_reconstruction_RELEASE_CANDIDATE.xlsx' | sha256sum --check
+      - name: Commit verified workbook
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/Study4_CheckMate_reconstruction_RELEASE_CANDIDATE.xlsx
+          if ! git diff --cached --quiet; then
+            git commit -m 'Publish verified Study 4 Excel reconstruction workbook'
+            git push origin HEAD:main
+          fi
